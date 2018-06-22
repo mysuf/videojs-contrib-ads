@@ -1,7 +1,7 @@
 {
   "name": "videojs-contrib-ads",
   "description": "A framework that provides common functionality needed by video advertisement libraries working with video.js.",
-  "main": "dist/videojs-contrib-ads.cjs.js",
+  "main": "dist/videojs.ads.js",
   "module": "dist/videojs-contrib-ads.es.js",
   "repository": {
     "type": "git",
@@ -104,7 +104,7 @@
   ],
   "dependencies": {
     "global": "^4.3.2",
-    "video.js": "6.10.2 || ^7.0.3"
+    "video.js": "^6 || ^7"
   },
   "generator-videojs-plugin": {
     "version": "6.0.8"
