@@ -41,12 +41,7 @@ module.exports = function(config) {
       'dist/videojs-contrib-ads.js',
       'dist/videojs-contrib-ads.css',
       'test/integration/lib/shared-module-hooks.js',
-      'test/dist/bundle.js',
-
-      // Test Data
-      {pattern: 'test/integration/lib/inventory.json', included: false, served: true},
-      {pattern: 'examples/basic-ad-plugin/superclip-low.webm', included: false, served: true},
-      {pattern: 'test/integration/lib/testcaption.vtt', included:false, served:true}
+      'test/dist/bundle.js'
     ],
     customLaunchers: {
       travisChrome: {
