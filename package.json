@@ -15,7 +15,8 @@
   "scripts": {
     "prebuild": "npm run clean",
     "build": "npm-run-all -p build:*",
-    "build:css": "npm-run-all build:css:postcss build:css:copy",
+    "build:css": "npm-run-all build:css:sass build:css:copy",
+    "build:css:sass": "node-sass src/plugin.scss dist/videojs-ssai.css --output-style=compressed --linefeed=lf",
     "build:css:postcss": "postcss --verbose -o dist/videojs-contrib-ads.css --config scripts/postcss.config.js src/plugin.css",
     "build:css:copy": "cpy dist/videojs-contrib-ads.css dist/ --rename=videojs.ads.css",
     "build:js": "npm-run-all build:js:rollup build:js:copy build:js:copymin",
@@ -32,7 +33,7 @@
     "preversion": "npm test",
     "version": "node scripts/version.js",
     "watch": "npm-run-all -p watch:*",
-    "watch:css": "npm run build:css:postcss -- -w",
+    "watch:css": "npm run build:css:sass -- -w",
     "watch:js": "npm run build:js:rollup -- -w",
     "prepublish": "not-in-install && npm run build || in-install",
     "prepush": "npm run lint"
@@ -61,6 +62,7 @@
     "karma-safari-launcher": "^1.0.0",
     "lodash": "^4.17.4",
     "mkdirp": "^0.5.1",
+    "node-sass": "^4.5.3",
     "npm-run-all": "^4.1.2",
     "postcss-banner": "^3.0.0",
     "postcss-cli": "^5.0.0",
